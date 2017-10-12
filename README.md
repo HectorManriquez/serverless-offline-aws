@@ -1,4 +1,6 @@
-# serverless-offline-aws
+# Serverless Offline Aws
+
+This is a skeleton for building apps through the Serverless framework, mainly through AWS.
 
 #### Contains:
 
