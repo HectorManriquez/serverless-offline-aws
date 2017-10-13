@@ -36,14 +36,9 @@ plugins:
   - serverless-dynamodb-local
   - serverless-offline
 
-functions:
-  test:
-    handler: src/index.test
-    events:
-      - http:
-          path: /test
-          method: get
+functions: ${file(./providersConfig/aws/functions.yml)}
 
 resources:
   Resources:
     testTable: ${file(./providersConfig/aws/dynamodb.yml):testTable}
+    S3BucketTest: ${file(./providersConfig/aws/s3.yml):S3BucketTest}

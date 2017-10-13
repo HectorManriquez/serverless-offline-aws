@@ -1,0 +1,4 @@
+S3BucketTest:
+  Type: AWS::S3::Bucket
+  Properties:
+    BucketName: ${self:service}-${self:custom.stage}-test-bucket
