@@ -1,0 +1,13 @@
+testTable:
+  Type: AWS::DynamoDB::Table
+  Properties:
+    TableName: ${self:custom.testTableName}
+    AttributeDefinitions:
+      - AttributeName: testID
+        AttributeType: S
+    KeySchema:
+      - AttributeName: testID
+        KeyType: HASH
+    ProvisionedThroughput:
+      ReadCapacityUnits: 1
+      WriteCapacityUnits: 1
