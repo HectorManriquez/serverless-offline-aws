@@ -8,3 +8,12 @@ iamRoleStatements:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:us-east-1:*:*"
+    - Effect: Allow
+      Action:
+        - iot:Connect
+        - iot:Publish
+        - iot:Subscribe
+        - iot:Receive
+        - iot:GetThingShadow
+        - iot:UpdateThingShadow
+      Resource: "arn:aws:iot:us-east-1:*:*"
