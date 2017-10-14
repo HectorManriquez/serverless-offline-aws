@@ -1,0 +1,24 @@
+CognitoUserPoolTestPoolId:
+  Type: AWS::Cognito::UserPool
+  Properties:
+    UserPoolName: ${self:service}-${self:custom.stage}-test-cognito-pool
+    Policies:
+      PasswordPolicy:
+        MinimumLength: 8
+        RequireLowercase: true
+        RequireNumbers: true
+        RequireSymbols: true
+        RequireUppercase: true
+    Schema:
+      - Name: email
+        Required: true
+    AutoVerifiedAttributes:
+      - email
+
+UserPoolClient:
+  Type: AWS::Cognito::UserPoolClient
+  Properties:
+    ClientName: test
+    UserPoolId: {Ref: CognitoUserPoolTestPoolId}
+    RefreshTokenValidity: 30
+    GenerateSecret: false
